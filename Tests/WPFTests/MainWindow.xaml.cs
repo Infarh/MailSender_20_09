@@ -28,7 +28,7 @@ namespace WPFTests
                 SecurePassword = PasswordEdit.SecurePassword
             };
 
-            client.Send(message);
+            //client.Send(message);
 
         }
     }
