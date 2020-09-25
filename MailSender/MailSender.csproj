@@ -7,7 +7,23 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Media\" />
+    <None Remove="Media\add.png" />
+    <None Remove="Media\clock.png" />
+    <None Remove="Media\edit.png" />
+    <None Remove="Media\remove.png" />
+    <None Remove="Media\scheduler.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Media\add.png" />
+    <Resource Include="Media\clock.png" />
+    <Resource Include="Media\edit.png" />
+    <Resource Include="Media\remove.png" />
+    <Resource Include="Media\scheduler.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FontAwesome5" Version="2.0.8" />
   </ItemGroup>
 
 </Project>
