@@ -6,7 +6,7 @@ namespace MailSender.Models
     {
         public string Address { get; set; }
 
-        private int _Port;
+        private int _Port = 25;
 
         public int Port
         {
@@ -30,5 +30,7 @@ namespace MailSender.Models
         //private readonly string _Description;
 
         //public string Description { get { return _Description; } }
+
+        //public override string ToString() => $"{Address}:{Port}";
     }
 }
