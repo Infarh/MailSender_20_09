@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSender", "MailSender\MailSender.csproj", "{5B5FEF01-449E-436B-ABA2-823BE7B309AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailSender", "MailSender\MailSender.csproj", "{5B5FEF01-449E-436B-ABA2-823BE7B309AC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{81CFE54A-5A9A-440D-BB6F-1B232648CBD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTests", "Tests\ConsoleTests\ConsoleTests.csproj", "{06B627F1-F91C-4D72-810C-1C7F5A1312D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleTests", "Tests\ConsoleTests\ConsoleTests.csproj", "{06B627F1-F91C-4D72-810C-1C7F5A1312D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFTests", "Tests\WPFTests\WPFTests.csproj", "{C5120BDA-EA45-46E7-8963-C31C3A2D3413}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFTests", "Tests\WPFTests\WPFTests.csproj", "{C5120BDA-EA45-46E7-8963-C31C3A2D3413}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSender.lib", "MailSender.lib\MailSender.lib.csproj", "{5FF76798-D5AC-4AE8-9F26-EEBBD01E52C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{C5120BDA-EA45-46E7-8963-C31C3A2D3413}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5120BDA-EA45-46E7-8963-C31C3A2D3413}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5120BDA-EA45-46E7-8963-C31C3A2D3413}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FF76798-D5AC-4AE8-9F26-EEBBD01E52C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FF76798-D5AC-4AE8-9F26-EEBBD01E52C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FF76798-D5AC-4AE8-9F26-EEBBD01E52C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FF76798-D5AC-4AE8-9F26-EEBBD01E52C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
