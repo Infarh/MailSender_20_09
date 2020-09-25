@@ -31,6 +31,11 @@
                 <TextBlock Text="Готов!"/>
             </StatusBarItem>
         </StatusBar>
-        <TabControl></TabControl>
+        <TabControl>
+            <TabItem Header="Списки"></TabItem>
+            <TabItem Header="Планировщик"></TabItem>
+            <TabItem Header="Письма"></TabItem>
+            <TabItem Header="Статистика"></TabItem>
+        </TabControl>
     </DockPanel>
 </Window>
