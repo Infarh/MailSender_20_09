@@ -6,145 +6,31 @@
         xmlns:local="clr-namespace:MailSender"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="MainWindowStyles.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Window.Resources>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Файл">
+                <MenuItem Header="Создать"/>
+                <MenuItem Header="Открыть"/>
+                <MenuItem Header="Закрыть"/>
+                <MenuItem Header="Сохранить"/>
+                <Separator/>
                 <MenuItem Header="Выход"/>
+            </MenuItem>
+            <MenuItem Header="Сервис">
+                <MenuItem Header="Параметры"/>
+            </MenuItem>
+            <MenuItem Header="Помощь">
+                <MenuItem Header="О программе"/>
             </MenuItem>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom">
-            Готов!
+            <StatusBarItem DockPanel.Dock="Right">
+                <ResizeGrip/>
+            </StatusBarItem>
+            <StatusBarItem>
+                <TextBlock Text="Готов!"/>
+            </StatusBarItem>
         </StatusBar>
-        <TabControl>
-            <TabItem Header="Панели компоновки">
-                <TabControl>
-                    <TabItem Header="Grid">
-                        <Grid >
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="21*" MinHeight="30"/>
-                                <RowDefinition Height="317*" MaxHeight="300"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="150*" MinWidth="200"/>
-                                <ColumnDefinition Width="Auto" MinWidth="500"/>
-                            </Grid.ColumnDefinitions>
-                            <Button Margin="20,4,0,100" 
-                                    HorizontalAlignment="Left"
-                                    BorderThickness="20,10,0,5"
-                                    Padding="40,20,10,0"
-                                    HorizontalContentAlignment="Stretch" Width="133" Grid.Row="1">
-                                Hello World
-                            </Button>
-                            <Button Margin="0,108,369,142" 
-                                    TabIndex="10"
-                                    IsTabStop="False" Grid.ColumnSpan="2" Grid.Row="1">
-                                Кнопка!
-                            </Button>
-                            <Ellipse Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Fill="Blue">
-                                <Ellipse.Effect>
-                                    <DropShadowEffect ShadowDepth="5"/>
-                                </Ellipse.Effect>
-                            </Ellipse>
-                            <UniformGrid Grid.Column="0" Grid.RowSpan="2"
-                                         Grid.Row="0" Grid.ColumnSpan="2"
-                                         Rows="1"
-                                         Margin="20,20"
-                                         HorizontalAlignment="Right" VerticalAlignment="Bottom">
-                                <Button Padding="60,15" Margin="10,0">Ok</Button>
-                                <Button Margin="10,0">Cancel</Button>
-                            </UniformGrid>
-                        </Grid>
-                    </TabItem>
-                    <TabItem Header="StackPanel">
-                        <StackPanel>
-                            <!--<StackPanel.Resources>
-                                <Style x:Key="BlackButtonStyle" TargetType="Button">
-                                    <Setter Property="Background" Value="Black"/>
-                                    <Setter Property="Foreground" Value="White"/>
-                                    <Setter Property="FontWeight" Value="Bold"/>
-                                </Style>
-                            </StackPanel.Resources>-->
-                            <Button Content="Hello World!" Style="{StaticResource BlackButtonStyle}"/>
-                            <Button Content="Кнопка 2" HorizontalAlignment="Left" 
-                                    Margin="30,10,0,10">
-                                <!--<Button.Style>
-                                    <Style TargetType="Button">
-                                        <Setter Property="Background" Value="Black"/>
-                                        <Setter Property="Foreground" Value="White"/>
-                                        <Setter Property="FontWeight" Value="Bold"/>
-                                    </Style>
-                                </Button.Style>-->
-                            </Button>
-                            <Button Content="Кнопка 3" HorizontalAlignment="Center" Margin="130,0,0,0"/>
-                            <TextBox>User name</TextBox>
-                            <StackPanel Orientation="Horizontal">
-                                <Ellipse Width="30" Height="10" Fill="Red"/>
-                                <Rectangle Width="150" Fill="Blue" Margin="30,5,5,5" RadiusX="5.667" RadiusY="5.667"/>
-                                <Button Padding="15,5">
-                                    <StackPanel Orientation="Horizontal">
-                                        <Ellipse Width="13" Height="13" Fill="Red"/>
-                                        <TextBlock Text="Button 0"/>
-                                    </StackPanel>
-                                </Button>
-                            </StackPanel>
-                        </StackPanel>
-                    </TabItem>
-                    <TabItem Header="DockPanel">
-                        <DockPanel>
-                            <Button DockPanel.Dock="Top">Кнопка 1</Button>
-                            <Button DockPanel.Dock="Right">Кнопка 2</Button>
-                            <Button DockPanel.Dock="Bottom">Кнопка 3</Button>
-                            <Button>Кнопка 4</Button>
-                            <TextBox DockPanel.Dock="Bottom">123</TextBox>
-                            <Ellipse Fill="Blue" Stroke="Red" StrokeThickness="5"></Ellipse>
-                        </DockPanel>
-                    </TabItem>
-                    <TabItem Header="UniformGrid">
-                        <UniformGrid Columns="2">
-                            <Button>Кнопка 1</Button>
-                            <Button>Кнопка 2</Button>
-                            <Button>Кнопка 3</Button>
-                            <Button>Кнопка 4</Button>
-                            <TextBox>123</TextBox>
-                            <ProgressBar Value="30"/>
-                            <WebBrowser Source="http://www.yandex.ru"/>
-                        </UniformGrid>
-                    </TabItem>
-                    <TabItem Header="WrapPanel">
-                        <WrapPanel Margin="5" Orientation="Vertical">
-                            <Button Margin="10,0" Padding="40,10">Кнопка 1</Button>
-                            <Button Margin="10,0" Padding="40,10">Кнопка 1</Button>
-                            <Button Margin="10,0" Padding="40,10" Style="{StaticResource BlackButtonStyle}">Кнопка 1</Button>
-                            <Button Margin="10,0" Padding="40,10">Кнопка 1</Button>
-                        </WrapPanel>
-                    </TabItem>
-                    <TabItem Header="Canvas">
-                        <Canvas>
-                            <Button Canvas.Left="10" Canvas.Top="40">Кнопка!!!</Button>
-                            <Rectangle Fill="Red" Width="150" Height="80"
-                                       Canvas.Left="20" Canvas.Bottom="50"/>
-                            <Ellipse Canvas.Right="50" Canvas.Top="10" Fill="Blue" 
-                                     Width="200" Height="75"/>
-                            <ProgressBar Canvas.Bottom="20" Canvas.Right="10" Width="150" Value="40"
-                                         Height="15"/>
-                        </Canvas>
-                    </TabItem>
-                    <!--<TabItem Header="VirtualizedStackPanel"></TabItem>-->
-                </TabControl>
-            </TabItem>
-            <TabItem Header="Списки">
-
-            </TabItem>
-            <TabItem Header="Планировщик"></TabItem>
-            <TabItem Header="Письма"></TabItem>
-            <TabItem Header="Статистика"></TabItem>
-        </TabControl>
+        <TabControl></TabControl>
     </DockPanel>
 </Window>
