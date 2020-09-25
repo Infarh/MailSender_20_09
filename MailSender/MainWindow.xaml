@@ -43,9 +43,15 @@
                                 <ComboBoxItem Content="smtp.gmail.com"/>
                                 <ComboBoxItem Content="smtp.mail.ru"/>
                             </ComboBox>
-                            <Button Content="Add"/>
-                            <Button Content="Edit"/>
-                            <Button Content="Del"/>
+                            <Button>
+                                <Image Source="Media/add.png" Height="12"/>
+                            </Button>
+                            <Button>
+                                <Image Source="Media/edit.png" Height="12"/>
+                            </Button>
+                            <Button>
+                                <Image Source="Media/remove.png" Height="12"/>
+                            </Button>
                         </ToolBar>
                         <ToolBar Header="Отправители" Band="1">
                             <ComboBox MinWidth="120" MaxWidth="200"
@@ -234,6 +240,9 @@
 
                 </Grid>
             </TabItem>
+            <!--<TabItem Header="Котики">
+                <Image Source="https://oir.mobi/uploads/posts/2019-11/1574898227_milye-kotiki-63.jpg"/>
+            </TabItem>-->
         </TabControl>
     </DockPanel>
 </Window>
