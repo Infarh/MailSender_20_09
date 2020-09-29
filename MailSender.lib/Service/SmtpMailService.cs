@@ -7,6 +7,11 @@ namespace MailSender.lib.Service
 {
     public class SmtpMailService : IMailService
     {
+        public SmtpMailService()
+        {
+            
+        }
+
         public IMailSender GetSender(string Server, int Port, bool SSL, string Login, string Password)
         {
             return new SmtpMailSender(Server, Port, SSL, Login, Password);

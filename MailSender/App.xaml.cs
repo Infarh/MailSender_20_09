@@ -1,4 +1,6 @@
 ﻿using System;
+using MailSender.lib.Interfaces;
+using MailSender.lib.Service;
 using MailSender.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -19,6 +21,15 @@ namespace MailSender
         private static void ConfigureServices(HostBuilderContext host, IServiceCollection services)
         {
             services.AddSingleton<MainWindowViewModel>();
+            services.AddTransient<IMailService, SmtpMailService>();
+            //services.AddScoped<>()
+
+            //using (var scope = Services.CreateScope())
+            //{
+            //    var mail_service = scope.ServiceProvider.GetRequiredService<IMailService>();
+            //    var sender = mail_service.GetSender("smtp.mail.ru", 25, true, "Login", "Password");
+            //    sender.Send("sender@mail.ru", "recipient@gmail.com", "Title", "Body");
+            //}
         }
     }
 }
