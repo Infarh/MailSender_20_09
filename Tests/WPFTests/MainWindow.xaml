@@ -4,116 +4,51 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFTests"
+        xmlns:vm="clr-namespace:WPFTests.ViewModels"
+        xmlns:commands="clr-namespace:WPFTests.Infrastructure.Commands"
         mc:Ignorable="d"
-        Title="MainWindow" Height="638" Width="848">
-    <Window.Resources>
-        <Style x:Key="FocusVisual">
-            <Setter Property="Control.Template">
-                <Setter.Value>
-                    <ControlTemplate>
-                        <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
-        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
-        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
-        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
-        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
-        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
-        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
-        <Style x:Key="TestButtonStyle" TargetType="{x:Type Button}">
-            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
-            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
-            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="Padding" Value="1"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true">
-                            <StackPanel Orientation="Horizontal">
-                                <Ellipse Name="ButtonEllipse" Width="16" Height="16" Fill="Red" Margin="5,0"/>
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                            </StackPanel>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsDefaulted" Value="true">
-                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-                            </Trigger>
-                            <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
-                                <Setter TargetName="ButtonEllipse" Property="Fill" Value="Blue"/>
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
-                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
+        Title="{Binding Title}"
+        Topmost="{Binding IsChecked, ElementName=IsWindowTopMost}"
+        Height="638" Width="848">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
     <Grid>
-        <Button Content="Отправить" HorizontalAlignment="Left" Height="55" Margin="325,194,0,0" VerticalAlignment="Top" Width="135" RenderTransformOrigin="0.5,0.5" Click="OnSendButtonClick"
-                Style="{StaticResource TestButtonStyle}">
-            <Button.Effect>
-                <BlurEffect Radius="2"/>
-            </Button.Effect>
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleX="-22.097"/>
-                    <RotateTransform Angle="41.11"/>
-                    <TranslateTransform X="8.412" Y="7.341"/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <TextBox Name="LoginEdit" HorizontalAlignment="Left" Height="20" Margin="140,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" RenderTransformOrigin="0.5,0.5">
-            <TextBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-20.689" x:Name="Rotator"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBox.RenderTransform>
-            <TextBox.Effect>
-                <DropShadowEffect/>
-            </TextBox.Effect>
-        </TextBox>
-        <PasswordBox Name="PasswordEdit" HorizontalAlignment="Left" Height="20" Margin="485,129,0,0" VerticalAlignment="Top" Width="210" RenderTransformOrigin="0.5,0.5">
-            <PasswordBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="12.75"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </PasswordBox.RenderTransform>
-        </PasswordBox>
-        <TextBlock HorizontalAlignment="Left" Margin="175,84,0,0" Text="Имя пользователя" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <Label Content="Пароль" HorizontalAlignment="Left" Margin="485,79,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="635,80,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Style="{StaticResource TestButtonStyle}" Content="Button" HorizontalAlignment="Left" Margin="550,194,0,0" VerticalAlignment="Top" Height="40" Width="85"/>
-        <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="40,114,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="40,149,0,0" VerticalAlignment="Top"/>
-        <ComboBox HorizontalAlignment="Left" Margin="40,194,0,0" VerticalAlignment="Top" Width="120"/>
-        <Calendar HorizontalAlignment="Left" Margin="60,227,0,0" VerticalAlignment="Top"/>
-        <Slider HorizontalAlignment="Left" Margin="424,389,0,0" VerticalAlignment="Top" Width="331" Height="18"/>
+        <TextBox VerticalAlignment="Top" HorizontalAlignment="Left" Width="140" Margin="62,26,0,0"
+                 Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"/>
+        <Slider VerticalAlignment="Top" HorizontalAlignment="Left" Width="140" Margin="435,26,0,0"
+                Minimum="0"
+                Maximum="600"
+                Value="{Binding X, ElementName=Translator}"/>
+        <Slider VerticalAlignment="Top" HorizontalAlignment="Left" Width="140" Margin="239,26,0,0"
+                Minimum="-180" Maximum="180"
+                Value="{Binding Angle, ElementName=Rotator}"/>
 
+        <Ellipse Fill="DarkBlue" Stroke="Red" StrokeThickness="4"
+                 VerticalAlignment="Top" HorizontalAlignment="Left" Width="80" Height="40" Margin="92,83,0,0"
+                 RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform Angle="0" x:Name="Rotator"/>
+                    <TranslateTransform X="0" x:Name="Translator"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <TextBlock Text="{Binding CurrentTime, ConverterCulture=ru-RU, StringFormat=HH:mm:ss.ffff}"/>
+        <CheckBox Content="Включить таймер" VerticalAlignment="Top" HorizontalAlignment="Left"
+                  Margin="80,0"
+                  IsChecked="{Binding TimerEnabled}"/>
+        <CheckBox Content="Top most" VerticalAlignment="Top" HorizontalAlignment="Left"
+                  Margin="220,0"
+                  Name="IsWindowTopMost"/>
+        <Button Content="Close Window" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Margin="20,60">
+            <Button.Command>
+                <commands:CloseWindowCommand/>
+            </Button.Command>
+        </Button>
+        <Button Content="Hello World!" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Margin="120,60" Command="{Binding ShowDialogCommand}">
+        </Button>
     </Grid>
 </Window>
