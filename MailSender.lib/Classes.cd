@@ -35,6 +35,55 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
+  <Class Name="MailSender.lib.Models.Message" Collapsed="true">
+    <Position X="8.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Message.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MailSender.lib.Models.Recipient" Collapsed="true">
+    <Position X="13" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Recipient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MailSender.lib.Models.Sender" Collapsed="true">
+    <Position X="15.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Sender.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MailSender.lib.Models.Server" Collapsed="true">
+    <Position X="10.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAQAAAAAAAACAAAAAACAAAQAAAACAA=</HashCode>
+      <FileName>Models\Server.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MailSender.lib.Models.Base.Entity" Collapsed="true">
+    <Position X="11.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Base\Entity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MailSender.lib.Models.Base.NamedEntity" Collapsed="true">
+    <Position X="14" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Base\Entity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MailSender.lib.Models.Base.Person" Collapsed="true">
+    <Position X="14" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Base\Entity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="MailSender.lib.Interfaces.IMailService">
     <Position X="7.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>

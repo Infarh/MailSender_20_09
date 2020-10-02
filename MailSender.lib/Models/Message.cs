@@ -1,6 +1,8 @@
-﻿namespace MailSender.lib.Models
+﻿using MailSender.lib.Models.Base;
+
+namespace MailSender.lib.Models
 {
-    public class Message
+    public class Message : Entity
     {
         public string Subject { get; set; }
 
