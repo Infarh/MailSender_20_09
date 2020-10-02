@@ -45,9 +45,10 @@
   <Class Name="MailSender.lib.Models.Recipient" Collapsed="true">
     <Position X="13" Y="9" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAQAAAAgAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Recipient.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="MailSender.lib.Models.Sender" Collapsed="true">
     <Position X="15.25" Y="9" Width="1.5" />

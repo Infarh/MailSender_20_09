@@ -6,14 +6,14 @@
              xmlns:local="clr-namespace:MailSender.Views"
              DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
              d:DesignWidth="453.5" d:DesignHeight="237">
-    <Grid Margin="15">
+    <Grid Margin="15" Validation.Error="OnDataValidationError">
         <Grid.Resources>
             <Style TargetType="TextBlock">
                 <Setter Property="HorizontalAlignment" Value="Right"/>
                 <Setter Property="VerticalAlignment" Value="Center"/>
             </Style>
             <Style TargetType="TextBox">
-                <Setter Property="Margin" Value="5"></Setter>
+                <Setter Property="Margin" Value="5"/>
             </Style>
         </Grid.Resources>
         <Grid.ColumnDefinitions>
@@ -32,7 +32,6 @@
         <TextBlock Grid.Column="0" Grid.Row="2" Text="Address:"/>
 
         <TextBox Grid.Column="1" Grid.Row="0" 
-                 Validation.Error="OnDataValidationError"
                  Text="{Binding SelectedRecipient.Id, NotifyOnValidationError=True}"/>
 
         <TextBox Grid.Column="1" Grid.Row="1" 
