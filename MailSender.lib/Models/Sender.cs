@@ -1,6 +1,6 @@
-﻿namespace MailSender.Models
+﻿namespace MailSender.lib.Models
 {
-    class Recipient
+    public class Sender
     {
         public string Name { get; set; }
 

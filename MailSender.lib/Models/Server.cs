@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace MailSender.Models
+namespace MailSender.lib.Models
 {
-    class Server
+    public class Server
     {
         public string Address { get; set; }
 

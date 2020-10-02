@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MailSender.Views"
              mc:Ignorable="d" 
+             DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
              d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel Margin="10">
         <TextBlock DockPanel.Dock="Top" Text="Получатели" 

@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Input;
 using MailSender.Infrastructure.Commands;
-using MailSender.Models;
+using MailSender.lib.Models;
 
 namespace MailSender.ViewModels
 {
