@@ -15,6 +15,24 @@
             </Style>
             <Style TargetType="TextBox">
                 <Setter Property="Margin" Value="5"/>
+                <Setter Property="Validation.ErrorTemplate">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <DockPanel>
+                                <TextBlock DockPanel.Dock="Right" Text="!"
+                                           Foreground="Red"
+                                           FontSize="18"
+                                           FontWeight="Bold"
+                                           Margin="3,0"
+                                           VerticalAlignment="Center"
+                                           ToolTip="{Binding AdornedElement.(Validation.Errors)[0].ErrorContent, ElementName=ErrorVisualElement}"/>
+                                <Border Padding="2" BorderBrush="Red" BorderThickness="3" CornerRadius="3">
+                                    <AdornedElementPlaceholder Name="ErrorVisualElement"/>
+                                </Border>
+                            </DockPanel>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
             </Style>
         </Grid.Resources>
         <Grid.ColumnDefinitions>
