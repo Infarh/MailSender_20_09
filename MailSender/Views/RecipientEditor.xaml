@@ -31,9 +31,15 @@
         <TextBlock Grid.Column="0" Grid.Row="1" Text="Name:"/>
         <TextBlock Grid.Column="0" Grid.Row="2" Text="Address:"/>
 
-        <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding SelectedRecipient.Id}"/>
-        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding SelectedRecipient.Name}"/>
-        <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding SelectedRecipient.Address}"/>
+        <TextBox Grid.Column="1" Grid.Row="0" 
+                 Validation.Error="OnDataValidationError"
+                 Text="{Binding SelectedRecipient.Id, NotifyOnValidationError=True}"/>
+
+        <TextBox Grid.Column="1" Grid.Row="1" 
+                 Text="{Binding SelectedRecipient.Name, NotifyOnValidationError=True, ValidatesOnDataErrors=True, ValidatesOnNotifyDataErrors=True, ValidatesOnExceptions=True}"/>
+
+        <TextBox Grid.Column="1" Grid.Row="2" 
+                 Text="{Binding SelectedRecipient.Address}"/>
 
         <UniformGrid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" Rows="1"
                      VerticalAlignment="Top" HorizontalAlignment="Center"
