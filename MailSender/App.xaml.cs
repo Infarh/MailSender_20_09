@@ -28,6 +28,8 @@ namespace MailSender
             services.AddTransient<IMailService, SmtpMailService>();
 #endif
 
+            services.AddSingleton<IEncryptorService, Rfc2898Encryptor>();
+
             //services.AddScoped<>()
 
             //using (var scope = Services.CreateScope())

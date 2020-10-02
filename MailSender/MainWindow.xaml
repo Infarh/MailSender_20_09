@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:fa="http://schemas.fontawesome.com/icons/"
         xmlns:data="clr-namespace:MailSender.Data"
-        xmlns:m="clr-namespace:MailSender.Models"
+        xmlns:v="clr-namespace:MailSender.Views"
         xmlns:local="clr-namespace:MailSender"
-        xmlns:System="clr-namespace:System;assembly=System.Runtime" 
+        xmlns:System="clr-namespace:System;assembly=System.Runtime"
+        xmlns:models="clr-namespace:MailSender.lib.Models;assembly=MailSender.lib"
         DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
         Title="{Binding Title}" 
         Height="450" Width="800">
@@ -66,7 +67,7 @@
                                       SelectedItem="{Binding SelectedSender}"
                                       ItemsSource="{Binding Senders}">
                                 <ComboBox.ItemTemplate>
-                                    <DataTemplate DataType="m:Sender">
+                                    <DataTemplate DataType="models:Sender">
                                         <StackPanel Orientation="Horizontal">
                                             <TextBlock Text="{Binding Name}" ToolTip="{Binding Address}"/>
                                             <!--<TextBlock>:</TextBlock>
@@ -99,20 +100,14 @@
                                     ToolTip="Удалить"/>
                         </ToolBar>
                     </ToolBarTray>
-                    <GroupBox Header="Список получателей">
-                        <DataGrid Name="RecipientsList" ItemsSource="{Binding Recipients}"
-                                  SelectedItem="{Binding SelectedRecipient}"
-                                  AutoGenerateColumns="False"
-                                  GridLinesVisibility="Vertical"
-                                  AlternatingRowBackground="LightBlue"
-                                  VerticalGridLinesBrush="Gray">
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Header="ID" MinWidth="30"/>
-                                <DataGridTextColumn Header="Имя" Width="*" Binding="{Binding Name}"/>
-                                <DataGridTextColumn Header="Адрес" MinWidth="160" Binding="{Binding Address}"/>
-                            </DataGrid.Columns>
-                        </DataGrid>
-                    </GroupBox>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <v:RecipientsView/>
+                        <v:RecipientEditor Grid.Column="1"/>
+                    </Grid>
                 </DockPanel>
             </TabItem>
             <TabItem Header="Планировщик">

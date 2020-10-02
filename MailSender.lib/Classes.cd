@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="MailSender.lib.Service.SmtpMailService">
+    <Position X="1.25" Y="1" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service\SmtpMailService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MailSender.lib.Service.SmtpMailSender">
+    <Position X="0.5" Y="2.75" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAEAAEEAAAEAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Service\SmtpMailService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MailSender.lib.Service.DebugMailService">
+    <Position X="7.25" Y="2.25" Width="6.25" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="MailSender.lib.Service.DebugMailService.DebugMailSender" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Service\DebugMailService.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service\DebugMailService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MailSender.lib.Models.Message" Collapsed="true">
+    <Position X="8.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Message.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MailSender.lib.Models.Recipient" Collapsed="true">
+    <Position X="13" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAQAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Recipient.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MailSender.lib.Models.Sender" Collapsed="true">
+    <Position X="15.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Sender.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MailSender.lib.Models.Server" Collapsed="true">
+    <Position X="10.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAQAAAAAAAACAAAAAACAAAQAAAACAA=</HashCode>
+      <FileName>Models\Server.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MailSender.lib.Models.Base.Entity" Collapsed="true">
+    <Position X="11.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Base\Entity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MailSender.lib.Models.Base.NamedEntity" Collapsed="true">
+    <Position X="14" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Base\Entity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MailSender.lib.Models.Base.Person" Collapsed="true">
+    <Position X="14" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Base\Entity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="MailSender.lib.Interfaces.IMailService">
+    <Position X="7.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IMailService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
