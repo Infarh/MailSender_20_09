@@ -75,7 +75,7 @@ namespace MailSender.lib.Tests.Service
             const string password = "Password";
 
             var encrypted_str = _Encryptor.Encrypt(str, password);
-            var vrong_pass_decrypted = _Encryptor.Decrypt(encrypted_str, "QWE");
+            var wrong_pass_decrypted = _Encryptor.Decrypt(encrypted_str, "QWE");
         }
     }
 }
