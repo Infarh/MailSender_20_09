@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Net;
 using System.Net.Mail;
+using System.Runtime.InteropServices;
 using System.Threading;
 using MailSender.lib.Interfaces;
 
@@ -81,5 +82,8 @@ namespace MailSender.lib.Service
             foreach (var recipient_address in RecipientsAddresses)
                 ThreadPool.QueueUserWorkItem(o => Send(SenderAddress, recipient_address, Subject, Body));
         }
+
+        //[DllImport("file_name.dll")]
+        //private static extern void MethodName(string str);
     }
 }
