@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Threading;
+using System.Threading.Tasks;
 using MailSender.lib.Interfaces;
 
 namespace MailSender.lib.Service
@@ -8,7 +11,7 @@ namespace MailSender.lib.Service
     {
         public IMailSender GetSender(string Server, int Port, bool SSL, string Login, string Password)
         {
-            return  new DebugMailSender(Server, Port, SSL, Login, Password);
+            return new DebugMailSender(Server, Port, SSL, Login, Password);
         }
 
         private class DebugMailSender : IMailSender
@@ -45,6 +48,22 @@ namespace MailSender.lib.Service
             public void SendParallel(string SenderAddress, IEnumerable<string> RecipientsAddresses, string Subject, string Body)
             {
                 Send(SenderAddress, RecipientsAddresses, Subject, Body);
+            }
+
+            public async Task SendAsync(string SenderAddress, string RecipientAddress, string Subject, string Body, CancellationToken Cancel = default)
+            {
+
+            }
+
+            public async Task SendAsync(
+                string SenderAddress, IEnumerable<string> RecipientsAddresses, string Subject, string Body, IProgress<(string Recipient, double Percent)> Progress = null, CancellationToken Cancel = default)
+            {
+
+            }
+
+            public async Task SendParallelAsync(string SenderAddress, IEnumerable<string> RecipientsAddresses, string Subject, string Body, CancellationToken Cancel = default)
+            {
+
             }
         }
     }
