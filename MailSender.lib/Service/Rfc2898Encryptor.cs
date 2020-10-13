@@ -3,6 +3,7 @@ using System.IO;
 using System.Text;
 using System.Security.Cryptography;
 using MailSender.lib.Interfaces;
+using MailSender.lib.Models;
 
 namespace MailSender.lib.Service
 {
