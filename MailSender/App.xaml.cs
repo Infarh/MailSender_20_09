@@ -1,9 +1,19 @@
 ﻿using System;
+using System.DirectoryServices.ActiveDirectory;
+using System.Linq;
+using System.Windows;
+using MailSender.Data;
+using MailSender.Data.Stores.InDB;
+using MailSender.Data.Stores.InMemory;
 using MailSender.lib.Interfaces;
+using MailSender.lib.Models;
 using MailSender.lib.Service;
 using MailSender.ViewModels;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace MailSender
 {
@@ -13,6 +23,18 @@ namespace MailSender
 
         public static IHost Hosting => _Hosting
             ??= Host.CreateDefaultBuilder(Environment.GetCommandLineArgs())
+               .ConfigureHostConfiguration(cfg => cfg
+                   .AddJsonFile("appconfig.json", true, true)
+                   .AddXmlFile("appsettings.xml", true, true)
+                )
+               .ConfigureAppConfiguration(cfg => cfg
+                   .AddJsonFile("appconfig.json", true, true)
+                   .AddXmlFile("appsettings.xml", true, true)
+                )
+               .ConfigureLogging(log => log
+                   .AddConsole()
+                   .AddDebug()
+                )
                .ConfigureServices(ConfigureServices)
                .Build();
 
@@ -30,13 +52,28 @@ namespace MailSender
 
             services.AddSingleton<IEncryptorService, Rfc2898Encryptor>();
 
-            //services.AddScoped<>()
+            services.AddDbContext<MailSenderDB>(opt => opt
+               .UseSqlServer(host.Configuration.GetConnectionString("Default")));
+            services.AddTransient<MailSenderDbInitializer>();
 
-            //using (var scope = Services.CreateScope())
+            //services.AddSingleton<IStore<Recipient>, RecipientsStoreInMemory>();
+            services.AddSingleton<IStore<Recipient>, RecipientsStoreInDB>();
+            //...
+        }
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            Services.GetRequiredService<MailSenderDbInitializer>().Initialize();
+            base.OnStartup(e);
+
+            //using (var db = Services.GetRequiredService<MailSenderDB>())
             //{
-            //    var mail_service = scope.ServiceProvider.GetRequiredService<IMailService>();
-            //    var sender = mail_service.GetSender("smtp.mail.ru", 25, true, "Login", "Password");
-            //    sender.Send("sender@mail.ru", "recipient@gmail.com", "Title", "Body");
+            //    var to_remove = db.SchedulerTasks.Where(task => task.Time < DateTime.Now);
+            //    if(to_remove.Any())
+            //    {
+            //        db.SchedulerTasks.RemoveRange(to_remove);
+            //        db.SaveChanges();
+            //    }
             //}
         }
     }
