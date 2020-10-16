@@ -9,6 +9,7 @@
         xmlns:local="clr-namespace:MailSender"
         xmlns:System="clr-namespace:System;assembly=System.Runtime"
         xmlns:models="clr-namespace:MailSender.lib.Models;assembly=MailSender.lib"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
         Title="{Binding Title}" 
         Height="450" Width="800">
@@ -120,6 +121,7 @@
                         <StackPanel>
                             <TextBlock Text="Календарь" TextAlignment="Center"/>
                             <Calendar/>
+                            <xctk:TimePicker/>
                             <StackPanel Margin="5,7">
                                 <StackPanel.Resources>
                                     <Style TargetType="Button">
