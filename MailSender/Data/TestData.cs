@@ -26,6 +26,7 @@ namespace MailSender.Data
         public static List<Server> Servers { get; } = Enumerable.Range(1, 10)
            .Select(i => new Server
            {
+               Name = $"Server {i}",
                Address = $"smtp.server{i}.com",
                Login = $"Login-{i}",
                Password = TextEncoder.Encode($"Password-{i}"),
